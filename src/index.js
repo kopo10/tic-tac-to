@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 class Square extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            values: null,
-        };
-    }
+   // constructor(props) {
+     //   super(props);
+       // this.state = {
+         //   values: null,
+        //};
+   // }
     render() {
       return (
         <button className="square" 
@@ -59,9 +59,11 @@ class Square extends React.Component {
         } else { 
             status = 'Next player: ' + (this.state.xIsNext? 'X':'O');
         }
-
-
         
+
+
+
+ //sdsds
       return (
         <div>
           <div className="status">{status}</div>
@@ -86,6 +88,16 @@ class Square extends React.Component {
   }
   
   class Game extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        history: [{
+          squares: Array(9).fill(null),
+        }],
+        xIsNext: true,
+      };
+    }
+    
     render() {
       return (
         <div className="game">
